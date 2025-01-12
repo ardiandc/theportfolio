@@ -1,0 +1,549 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F2F2F2;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  padding: 10px 0; /* Menambahkan padding agar navbar lebih nyaman */
+}
+
+
+/* Navbar container */
+.navbar-container {
+  background-color: rgba(0, 0, 0, 0.3);  
+  padding: 16px 16px;
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Navigation button styles */
+.nav-button {
+  background-color: #FFFFFF;
+  color: #080808;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #F2F2F2;
+  color: #000000;
+}
+
+/* Selected state for navigation buttons */
+.nav-button.selected {
+  font-weight: 700;
+  color: #8200D0;
+  background-color: #F2F2F2;
+}
+
+
+/* Row two, column second styles */
+.row-second {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Menyelaraskan konten dengan atas */
+  width: fill;
+  height: fit-content;
+  padding: 120px 20px 0px 20px;
+  gap: 20px; /* Memberikan jarak antar kolom */
+}
+
+/* Row 2 Kolom 1 (text-container) */
+.text-container {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px 40px;
+  width: 500px; /* Lebar fixed 703px untuk kolom pertama */
+  height: fill; /* Tinggi tetap 243px */
+  text-align: left;
+}
+
+/* Text row styles */
+.text-row-first {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.text-row-second {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.purple-text {
+  color: #8200D0;
+}
+
+.blue-text {
+  color: #286ffd;
+}
+
+/* Row 2 Kolom 2 (image-container) */
+.image-container {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 0;
+  width: 212px; /* Lebar tetap 212px */
+  height: fill; /* Tinggi tetap 243px */
+  display: flex;
+  justify-content: center;
+  align-items: bottom;
+}
+
+/* Image styles */
+.ardian-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Row 2 Kolom 3 (text-container) */
+.text-container-2 {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px 40px;
+  width: 580px; /* Lebar mengikuti konten */
+  height: fill; /* Tinggi tetap 243px */
+  text-align: left;
+}
+
+/* Text row styles (kolom ketiga) */
+.text-row-1 {
+  font-size: 36px;
+  line-height: 120%;
+  font-weight: 500;
+  padding-bottom: -1px;
+}
+
+.text-row-2 {
+  font-size: 64px;
+  color: #286ffd;
+  line-height: 120%;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Row 3 kolom 1 */
+.row-third {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Menyelaraskan konten ke atas */
+  width: fill;
+  height: fit-content;
+  padding: 20px 20px 20px 20px;
+  gap: 20px;
+}
+
+/* Kolom pertama (text-container-3) */
+.text-container-3 {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px 40px;
+  width: 800px; /* Lebar container */
+  height: fill;
+  text-align: left;
+  align-items: stretch;
+}
+
+/* Teks judul (row 1) */
+.text-row-title {
+  font-size: 48px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #8200D0; /* Warna ungu */
+  margin-bottom: 20px;
+}
+
+/* Paragraf teks (row 2 dan row 3) */
+.text-paragraph {
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: 400;
+  color: #333333; /* Warna teks */
+  margin-bottom: 20px; /* Jarak antar paragraf */
+  text-align: justify;
+}
+
+.bold-text {
+  font-weight: 700; /* Menambahkan font-weight 700 pada teks yang dibungkus */
+}
+
+/* Row 3 Kolom 2 (image-container-3) */
+.image-container-3 {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tiga kolom dengan ukuran fleksibel */
+  grid-gap: 20px; /* Jarak antar gambar yang konsisten */
+  justify-content: center;
+  align-items: stretch;
+  width: 100%; /* Lebar responsif */
+  max-width: 800px; /* Lebar maksimum agar tetap terjaga */
+  height: auto; /* Tinggi otomatis sesuai konten */
+  box-sizing: border-box;
+}
+
+/* Individual image container */
+.image-box {
+  width: 100%; /* Mengisi grid kolom */
+  height: 120px; /* Menjaga tinggi gambar tetap */
+  border-radius: 12px;
+  overflow: hidden; /* Agar gambar tidak keluar dari container */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Styling for the images */
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat gambar memenuhi container */
+  border-radius: 12px;
+}
+
+
+/*Row 4*/
+
+.text-row {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 120%;
+  align-items: stretch;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 20px;
+}
+
+.text-explain {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: center;
+}
+
+/* Row 5 */
+.row-five {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.subheading {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px; /* Jarak antar kartu */
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  cursor: grab; /* Mengubah cursor saat mengarah ke container */
+  overflow: hidden; /* Menyembunyikan overflow supaya tidak terlihat scrollbar */
+  scroll-behavior: smooth;
+}
+
+.card {
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 240px; /* Ukuran kartu */
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0; /* Agar kartu tidak mengecil */
+  cursor: pointer;
+  flex-grow: 1; /* Membuat kartu bisa berkembang dan mengisi ruang kosong */
+  text-decoration: none; /* Hilangkan garis bawah pada teks */
+  color: inherit; /* Warna teks mengikuti default */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Efek melayang saat hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Perbesar bayangan */
+  text-decoration: none; /* Pastikan teks tetap tanpa garis bawah */
+}
+
+.card-image {
+  width: 100%;
+  height: 135px; /* Ukuran gambar dengan rasio 16:9 */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 12px;
+  text-align: left;
+  text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+.card-year {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+/* Tambahkan ini untuk elemen <a> jika digunakan */
+.card:link, .card:visited, .card:hover, .card:active {
+  text-decoration: none; /* Hilangkan garis bawah di semua state */
+}
+
+
+/* row 7 */
+.row-seven {
+  padding: 40px 0; /* Optional: padding around the row */
+}
+
+.container-award {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
+  align-items: center;
+}
+
+.card-award {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 12px; /* Rounded corners */
+  padding: 40px; /* Internal padding for the card */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.title-award {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.issue-award {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px; /* Space between issue and date */
+  text-align: center;
+  font-style: italic;
+}
+
+.card-date {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666; /* Optional: grey color for the date */
+  text-align: center;
+}
+
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 834px) { /* Tablet ukuran 834x1194 */
+  body {
+    font-size: 20px; /* Sesuaikan ukuran dasar font */
+  }
+  .text-row-first {
+    font-size: 28px; /* Dikurangi secara proporsional */
+    line-height: 140%;
+  }
+  .text-row-second {
+    font-size: 14px;
+    line-height: 160%;
+  }
+  .text-row-1 {
+    font-size: 20px;
+    line-height: 140%;
+  }
+  .text-row-2 {
+    font-size: 32px;
+    line-height: 120%;
+  }
+  .text-container, .text-container-2 {
+    width: 450px;
+    padding: 20px;
+  }
+  .ardian-image {
+    width: 180px;
+    height: auto; /* Tinggi mengikuti proporsi gambar */
+  }
+  .text-container-3 {
+    width: 100%;
+    padding: 20px;
+  }
+  .text-row-title {
+   font-size: 28px;
+   line-height: 140%;
+   margin-bottom: 0px;
+  }
+  .text-paragraph {
+    font-size: 14px;
+    line-height: 160%;
+    margin-bottom: 12px;
+  }
+  .image-container-3 {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk tablet */
+    padding: 20px;
+  }
+  .section {
+    padding: 20px 20px;
+  }
+  .text-row {
+    font-size: 32px;
+    line-height: 120%;
+    margin-bottom: 12px;
+  }
+  .text-explain {
+    font-size: 12px;
+    line-height: 140%;
+  }
+}
+
+@media screen and (max-width: 450px) { /* Smartphone ukuran 390x844 */
+  body {
+    font-size: 14px; /* Ukuran dasar font */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Mengatur layout body */
+    flex-direction: column;
+    align-items: center; /* Semua elemen di tengah secara horizontal */
+  }
+
+  /* General Container */
+  .container {
+    width: 100%; /* Lebar penuh */
+    max-width: 350px; /* Batas maksimum */
+    margin: 0 auto; /* Center alignment */
+    padding: 16px;
+    box-sizing: border-box; /* Padding masuk ke width */
+  }
+
+  /* Navbar */
+  .navbar-container {
+    width: 100%;
+    max-width: 350px; /* Pastikan sejajar */
+    padding: 8px;
+    border-radius: 14px;
+    gap: 8px;
+    margin: 0 auto; /* Center alignment */
+  }
+
+  .nav-button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+  }
+
+  /* Row 2 */
+  .row-second {
+    display: flex;
+    flex-direction: column; /* Vertikal */
+    gap: 12px;
+    width: 100%;
+    max-width: 350px; /* Konsistensi lebar */
+    padding: 12px 0px 0px 0px;
+    box-sizing: border-box;
+  }
+
+  .text-container, .text-container-2 {
+    width: 100%; /* Lebar penuh */
+    max-width: 350px; /* Konsistensi lebar */
+    margin: 0 auto; /* Center alignment */
+    padding: 12px;
+    text-align: center; /* Teks di tengah */
+    box-sizing: border-box;
+  }
+  .image-container {
+    width: 100%; /* Lebar penuh */
+    max-width: 350px; /* Konsistensi lebar */
+    margin: 0 auto; /* Center alignment */
+    padding: 0px;
+    text-align: center; /* Teks di tengah */
+    box-sizing: border-box;
+  }
+  .ardian-image {
+    width: 100%;
+    height: fit-content; /* Tinggi tetap */
+    object-fit: cover; /* Gambar sesuai ukuran kontainer */
+    display: block;
+    box-sizing: border-box; /* Pastikan padding tidak mempengaruhi ukuran */
+  }
+
+  /* Row 3 */
+  .row-third {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 350px; /* Konsistensi lebar */
+    padding: 12px 0px 12px 0px;
+    box-sizing: border-box;
+  }
+
+  .text-container-3 {
+    width: 100%;
+    max-width: 350px; /* Konsistensi lebar */
+    padding: 12px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Grid untuk gambar */
+  .image-container-3 {
+    display: grid; /* Menggunakan grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+    grid-gap: 16px;
+    width: 100%;
+    max-width: 350px; /* Konsistensi lebar */
+    margin: 0 auto;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .image-box {
+    width: 100%;
+    height: 100px; /* Tinggi tetap */
+    object-fit: cover; /* Gambar memenuhi elemen tanpa distorsi */
+    display: block;
+    margin: 0 auto; /* Center alignment */
+    box-sizing: border-box; /* Pastikan padding tidak mempengaruhi ukuran */
+  }
+  .section {
+    padding: 12px 12px;
+  }
+  .text-row {
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 8px;
+  }
+  .text-explain {
+    font-size: 10px;
+    line-height: 140%;
+  }
+}
+
