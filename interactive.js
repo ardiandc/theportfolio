@@ -51,3 +51,57 @@ navButtons.forEach((button) => {
 
 // Event listener untuk scrolling
 window.addEventListener('scroll', updateNavbarState);
+
+
+// SCROLLING CARD PROJECTS
+
+// Pilih elemen card container
+const cardContainer = document.querySelector('.card-container');
+
+// Variabel untuk menyimpan status drag
+let isDragging = false; // Apakah user sedang drag
+let startX, scrollLeft; // Posisi awal drag dan scroll
+
+// Event listener saat drag dimulai (mouse/touch)
+cardContainer.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.pageX - cardContainer.offsetLeft; // Posisi awal mouse
+  scrollLeft = cardContainer.scrollLeft; // Posisi awal scroll container
+  cardContainer.style.cursor = 'grabbing'; // Ubah cursor saat drag
+});
+
+cardContainer.addEventListener('mouseleave', () => {
+  isDragging = false; // Reset saat mouse keluar container
+  cardContainer.style.cursor = 'grab'; // Kembalikan cursor
+});
+
+cardContainer.addEventListener('mouseup', () => {
+  isDragging = false; // Reset saat mouse dilepas
+  cardContainer.style.cursor = 'grab';
+});
+
+cardContainer.addEventListener('mousemove', (e) => {
+  if (!isDragging) return; // Jika tidak sedang drag, abaikan
+  e.preventDefault(); // Hentikan default behavior mouse
+  const x = e.pageX - cardContainer.offsetLeft; // Posisi saat ini
+  const walk = (x - startX) * 2; // Hitung jarak drag (bisa disesuaikan)
+  cardContainer.scrollLeft = scrollLeft - walk; // Update posisi scroll
+});
+
+// Untuk mendukung touch device
+cardContainer.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].pageX - cardContainer.offsetLeft; // Posisi awal touch
+  scrollLeft = cardContainer.scrollLeft;
+});
+
+cardContainer.addEventListener('touchend', () => {
+  isDragging = false; // Reset saat touch selesai
+});
+
+cardContainer.addEventListener('touchmove', (e) => {
+  if (!isDragging) return; // Abaikan jika tidak sedang drag
+  const x = e.touches[0].pageX - cardContainer.offsetLeft; // Posisi touch
+  const walk = (x - startX) * 2; // Hitung jarak drag (bisa disesuaikan)
+  cardContainer.scrollLeft = scrollLeft - walk; // Update posisi scroll
+});
