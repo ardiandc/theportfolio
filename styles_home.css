@@ -451,6 +451,7 @@ body {
     border-radius: 14px;
     gap: 8px;
     margin: 0 auto; /* Center alignment */
+    position: fixed;
   }
 
   .nav-button {
@@ -465,14 +466,15 @@ body {
     flex-direction: column; /* Vertikal */
     gap: 12px;
     width: 100%;
-    max-width: 350px; /* Konsistensi lebar */
+    max-width: 400px; /* Konsistensi lebar */
     padding: 12px 0px 0px 0px;
     box-sizing: border-box;
+    margin-top: 60px;
   }
 
   .text-container, .text-container-2 {
     width: 100%; /* Lebar penuh */
-    max-width: 350px; /* Konsistensi lebar */
+    max-width: 400px; /* Konsistensi lebar */
     margin: 0 auto; /* Center alignment */
     padding: 12px;
     text-align: center; /* Teks di tengah */
@@ -480,7 +482,7 @@ body {
   }
   .image-container {
     width: 100%; /* Lebar penuh */
-    max-width: 350px; /* Konsistensi lebar */
+    max-width: 400px; /* Konsistensi lebar */
     margin: 0 auto; /* Center alignment */
     padding: 0px;
     text-align: center; /* Teks di tengah */
@@ -500,14 +502,14 @@ body {
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    max-width: 350px; /* Konsistensi lebar */
+    max-width: 400px; /* Konsistensi lebar */
     padding: 12px 0px 12px 0px;
     box-sizing: border-box;
   }
 
   .text-container-3 {
     width: 100%;
-    max-width: 350px; /* Konsistensi lebar */
+    max-width: 400px; /* Konsistensi lebar */
     padding: 12px;
     text-align: center;
     box-sizing: border-box;
@@ -519,7 +521,7 @@ body {
     grid-template-columns: repeat(2, 1fr); /* Dua kolom */
     grid-gap: 16px;
     width: 100%;
-    max-width: 350px; /* Konsistensi lebar */
+    max-width: 400px; /* Konsistensi lebar */
     margin: 0 auto;
     padding: 12px;
     box-sizing: border-box;
@@ -540,10 +542,107 @@ body {
     font-size: 28px;
     line-height: 120%;
     margin-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .text-explain {
     font-size: 10px;
     line-height: 140%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .row-five {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .subheading {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .card-container {
+    display: flex;
+    gap: 8px; /* Jarak antar kartu */
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    overflow-y: hidden; /* Hapus scroll vertikal */
+    scroll-behavior: smooth; /* Animasi smooth saat scrolling */
+    padding: 12px;
+    width: 100%; /* Ambil lebar penuh */
+    box-sizing: border-box;
+  }
+  
+  .card {
+    width: 180px; /* Ukuran lebar kartu */
+    flex-shrink: 0; /* Mencegah kartu mengecil */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+  }
+  
+  .card-year {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 4px;
+  }
+  .row-seven {
+    padding: 12px 12px; /* Optional: padding around the row */
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .container-award {
+    display: flex;
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 12px; /* Space between cards */
+    padding: 20px; /* Padding around the container */
+    align-items: center;
+  }
+  
+  .card-award {
+    padding: 20px; /* Internal padding for the card */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-award {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .issue-award {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px; /* Space between issue and date */
+  }
+  
+  .card-date {
+    font-size: 12px;
+    font-weight: 400;
   }
 }
-
