@@ -55,7 +55,7 @@ body {
 .row-second {
   margin-top: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch; /* Menyelaraskan konten dengan atas */
   width: fill;
   height: fit-content;
@@ -68,7 +68,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 40px 40px;
-  width: 500px; /* Lebar fixed 703px untuk kolom pertama */
+  width: 100%;  
   height: fill; /* Tinggi tetap 243px */
   text-align: left;
 }
@@ -87,6 +87,12 @@ body {
   font-weight: 500;
 }
 
+.text-row-third {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
+
 .purple-text {
   color: #8200D0;
 }
@@ -100,7 +106,8 @@ body {
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 0;
-  width: 212px; /* Lebar tetap 212px */
+  width: 100%; /* Lebar tetap 212px */
+  max-width: 212px;
   height: fill; /* Tinggi tetap 243px */
   display: flex;
   justify-content: center;
@@ -120,7 +127,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 40px 40px;
-  width: 580px; /* Lebar mengikuti konten */
+  width: 100%; /* Lebar mengikuti konten */
   height: fill; /* Tinggi tetap 243px */
   text-align: left;
 }
@@ -158,7 +165,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 40px 40px;
-  width: 800px; /* Lebar container */
+  width: 100%; /* Lebar container */
   height: fill;
   text-align: left;
   align-items: stretch;
