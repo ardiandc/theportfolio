@@ -811,7 +811,7 @@ body {
     padding: 20px; /* Internal padding for the card */
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    width: fill;
   }
   
   .title-award {
