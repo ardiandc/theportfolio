@@ -56,52 +56,74 @@ window.addEventListener('scroll', updateNavbarState);
 // SCROLLING CARD PROJECTS
 
 // Pilih elemen card container
-const cardContainer = document.querySelector('.card-container');
+// Pilih semua elemen .card-container dan .card-container-poster
+const cardContainers = document.querySelectorAll('.card-container, .card-container-poster');
 
 // Variabel untuk menyimpan status drag
 let isDragging = false; // Apakah user sedang drag
 let startX, scrollLeft; // Posisi awal drag dan scroll
 
-// Event listener saat drag dimulai (mouse/touch)
-cardContainer.addEventListener('mousedown', (e) => {
+// Fungsi untuk menangani drag pada card container
+function handleDragStart(e, cardContainer) {
   isDragging = true;
   startX = e.pageX - cardContainer.offsetLeft; // Posisi awal mouse
   scrollLeft = cardContainer.scrollLeft; // Posisi awal scroll container
   cardContainer.style.cursor = 'grabbing'; // Ubah cursor saat drag
-});
+}
 
-cardContainer.addEventListener('mouseleave', () => {
+// Fungsi untuk menangani mouse leave
+function handleMouseLeave(cardContainer) {
   isDragging = false; // Reset saat mouse keluar container
   cardContainer.style.cursor = 'grab'; // Kembalikan cursor
-});
+}
 
-cardContainer.addEventListener('mouseup', () => {
+// Fungsi untuk menangani mouse up
+function handleMouseUp(cardContainer) {
   isDragging = false; // Reset saat mouse dilepas
   cardContainer.style.cursor = 'grab';
-});
+}
 
-cardContainer.addEventListener('mousemove', (e) => {
+// Fungsi untuk menangani mouse move
+function handleMouseMove(e, cardContainer) {
   if (!isDragging) return; // Jika tidak sedang drag, abaikan
   e.preventDefault(); // Hentikan default behavior mouse
   const x = e.pageX - cardContainer.offsetLeft; // Posisi saat ini
   const walk = (x - startX) * 2; // Hitung jarak drag (bisa disesuaikan)
   cardContainer.scrollLeft = scrollLeft - walk; // Update posisi scroll
-});
+}
 
-// Untuk mendukung touch device
-cardContainer.addEventListener('touchstart', (e) => {
-  isDragging = true;
-  startX = e.touches[0].pageX - cardContainer.offsetLeft; // Posisi awal touch
-  scrollLeft = cardContainer.scrollLeft;
-});
+// Event listener untuk masing-masing container
+cardContainers.forEach((cardContainer) => {
+  // Event listener saat drag dimulai (mouse/touch)
+  cardContainer.addEventListener('mousedown', (e) => handleDragStart(e, cardContainer));
+  
+  cardContainer.addEventListener('mouseleave', () => handleMouseLeave(cardContainer));
+  
+  cardContainer.addEventListener('mouseup', () => handleMouseUp(cardContainer));
+  
+  cardContainer.addEventListener('mousemove', (e) => handleMouseMove(e, cardContainer));
+  
+  // Untuk mendukung touch device
+  cardContainer.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - cardContainer.offsetLeft; // Posisi awal touch
+    scrollLeft = cardContainer.scrollLeft;
+  });
 
-cardContainer.addEventListener('touchend', () => {
-  isDragging = false; // Reset saat touch selesai
-});
+  cardContainer.addEventListener('touchend', () => handleMouseUp(cardContainer));
 
-cardContainer.addEventListener('touchmove', (e) => {
-  if (!isDragging) return; // Abaikan jika tidak sedang drag
-  const x = e.touches[0].pageX - cardContainer.offsetLeft; // Posisi touch
-  const walk = (x - startX) * 2; // Hitung jarak drag (bisa disesuaikan)
-  cardContainer.scrollLeft = scrollLeft - walk; // Update posisi scroll
+  cardContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return; // Abaikan jika tidak sedang drag
+    const x = e.touches[0].pageX - cardContainer.offsetLeft; // Posisi touch
+    const walk = (x - startX) * 2; // Hitung jarak drag (bisa disesuaikan)
+    cardContainer.scrollLeft = scrollLeft - walk; // Update posisi scroll
+  });
+
+  // Menangani scroll dengan mouse wheel
+  cardContainer.addEventListener('wheel', (e) => {
+    if (e.deltaY !== 0) {
+      cardContainer.scrollLeft += e.deltaY; // Scroll horizontal saat mouse wheel digulir
+      e.preventDefault(); // Mencegah scroll vertikal default
+    }
+  });
 });
