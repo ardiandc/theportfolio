@@ -747,7 +747,7 @@ body {
     text-align: left;
   }
   
-  .card-container {
+  .card-container-poster {
     display: flex;
     gap: 8px; /* Jarak antar kartu */
     overflow-x: auto; /* Aktifkan scroll horizontal */
