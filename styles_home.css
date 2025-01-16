@@ -12,6 +12,7 @@ body {
   position: fixed;
   width: 100%;
   padding: 10px 0; /* Menambahkan padding agar navbar lebih nyaman */
+  z-index: 1000; /* Memberikan nilai z-index lebih tinggi */
 }
 
 
@@ -278,7 +279,7 @@ body {
   scroll-behavior: smooth;
 }
 
-.card {
+.card-uiux {
   background-color: white;
   border-radius: 14px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -293,18 +294,48 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card-uiux:hover {
   transform: translateY(-8px); /* Efek melayang saat hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Perbesar bayangan */
   text-decoration: none; /* Pastikan teks tetap tanpa garis bawah */
 }
 
-.card-image {
+.card-image-uiux {
   width: 100%;
   height: 135px; /* Ukuran gambar dengan rasio 16:9 */
   object-fit: cover;
   border-radius: 12px;
 }
+
+.card-poster {
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 240px; /* Ukuran kartu */
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0; /* Agar kartu tidak mengecil */
+  cursor: pointer;
+  flex-grow: 1; /* Membuat kartu bisa berkembang dan mengisi ruang kosong */
+  text-decoration: none; /* Hilangkan garis bawah pada teks */
+  color: inherit; /* Warna teks mengikuti default */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: auto;
+}
+
+.card-poster:hover {
+  transform: translateY(-8px); /* Efek melayang saat hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Perbesar bayangan */
+  text-decoration: none; /* Pastikan teks tetap tanpa garis bawah */
+}
+
+.card-image-poster {
+  width: 100%;
+  height: calc(100% * 198px); /* Ukuran gambar dengan rasio 16:9 */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 
 .card-title {
   font-size: 16px;
@@ -348,6 +379,9 @@ body {
   justify-content: center;
   width: 100%;
   max-width: 800px;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1; /* Menjamin kartu berada di bawah navbar */
 }
 
 .title-award {
@@ -371,6 +405,16 @@ body {
   text-align: center;
 }
 
+.card-award:hover {
+  transform: translateY(-8px); /* Efek melayang saat hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Perbesar bayangan */
+  text-decoration: none; /* Pastikan teks tetap tanpa garis bawah */
+}
+
+.card-award:link, .card-award:visited, .card-award:hover, .card-award:active {
+  text-decoration: none; /* Hilangkan garis bawah di semua state */
+  color: inherit;
+}
 
 
 
@@ -380,7 +424,7 @@ body {
     font-size: 20px; /* Sesuaikan ukuran dasar font */
   }
   .text-row-first {
-    font-size: 28px; /* Dikurangi secara proporsional */
+    font-size: 20px; /* Dikurangi secara proporsional */
     line-height: 140%;
   }
   .text-row-second {
@@ -394,6 +438,11 @@ body {
   .text-row-2 {
     font-size: 32px;
     line-height: 120%;
+  }
+  .text-row-third {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 300;
   }
   .text-container, .text-container-2 {
     width: 450px;
@@ -432,6 +481,30 @@ body {
   .text-explain {
     font-size: 12px;
     line-height: 140%;
+  }
+  .card-award {
+    padding: 20px; /* Internal padding for the card */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .title-award {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .issue-award {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px; /* Space between issue and date */
+  }
+  
+  .card-date {
+    font-size: 12px;
+    font-weight: 400;
   }
 }
 
