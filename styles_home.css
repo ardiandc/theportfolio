@@ -804,7 +804,7 @@ body {
     padding: 12px; /* Padding around the container */
     align-items: center;
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
   }
   
   .card-award {
