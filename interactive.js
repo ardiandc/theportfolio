@@ -57,7 +57,10 @@ window.addEventListener('scroll', updateNavbarState);
 
 // Pilih elemen card container
 // Pilih semua elemen .card-container dan .card-container-poster
-const cardContainers = document.querySelectorAll('.card-container, .card-container-poster');
+// Pilih semua elemen card container termasuk row-six-2
+const cardContainers = document.querySelectorAll(
+  '.card-container, .card-container-poster, .card-container-ig'
+);
 
 // Variabel untuk menyimpan status drag
 let isDragging = false; // Apakah user sedang drag
@@ -95,14 +98,22 @@ function handleMouseMove(e, cardContainer) {
 // Event listener untuk masing-masing container
 cardContainers.forEach((cardContainer) => {
   // Event listener saat drag dimulai (mouse/touch)
-  cardContainer.addEventListener('mousedown', (e) => handleDragStart(e, cardContainer));
-  
-  cardContainer.addEventListener('mouseleave', () => handleMouseLeave(cardContainer));
-  
-  cardContainer.addEventListener('mouseup', () => handleMouseUp(cardContainer));
-  
-  cardContainer.addEventListener('mousemove', (e) => handleMouseMove(e, cardContainer));
-  
+  cardContainer.addEventListener('mousedown', (e) =>
+    handleDragStart(e, cardContainer)
+  );
+
+  cardContainer.addEventListener('mouseleave', () =>
+    handleMouseLeave(cardContainer)
+  );
+
+  cardContainer.addEventListener('mouseup', () =>
+    handleMouseUp(cardContainer)
+  );
+
+  cardContainer.addEventListener('mousemove', (e) =>
+    handleMouseMove(e, cardContainer)
+  );
+
   // Untuk mendukung touch device
   cardContainer.addEventListener('touchstart', (e) => {
     isDragging = true;
