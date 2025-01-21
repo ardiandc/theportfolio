@@ -292,6 +292,7 @@ body {
   text-decoration: none; /* Hilangkan garis bawah pada teks */
   color: inherit; /* Warna teks mengikuti default */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(90, 88, 88, 0.3); /* Warna dan ketebalan border */
 }
 
 .card-uiux:hover {
@@ -360,6 +361,7 @@ body {
   text-decoration: none; /* Hilangkan garis bawah pada teks */
   color: inherit; /* Warna teks mengikuti default */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(90, 88, 88, 0.3); /* Warna dan ketebalan border */
 }
 
 .card-poster:hover {
@@ -390,6 +392,75 @@ body {
   text-decoration: none; /* Pastikan tidak ada garis bawah */
 }
 
+/* ROW SIX PART 2 */
+
+.row-six-2 {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.subheading-ig {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.card-container-ig {
+  display: flex;
+  gap: 20px; /* Jarak antar kartu */
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  cursor: grab; /* Mengubah cursor saat mengarah ke container */
+  overflow: hidden; /* Menyembunyikan overflow supaya tidak terlihat scrollbar */
+  scroll-behavior: smooth;
+}
+
+.card-ig {
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 240px; /* Ukuran kartu */
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0; /* Agar kartu tidak mengecil */
+  cursor: pointer;
+  flex-grow: 1; /* Membuat kartu bisa berkembang dan mengisi ruang kosong */
+  text-decoration: none; /* Hilangkan garis bawah pada teks */
+  color: inherit; /* Warna teks mengikuti default */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(90, 88, 88, 0.3); /* Warna dan ketebalan border */
+}
+
+.card-ig:hover {
+  transform: translateY(-8px); /* Efek melayang saat hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Perbesar bayangan */
+  text-decoration: none; /* Pastikan teks tetap tanpa garis bawah */
+}
+
+.card-image-ig {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Memastikan gambar selalu berbentuk persegi (rasio 1:1) */
+  object-fit: cover; /* Memastikan gambar memenuhi area tanpa mengubah rasio */
+  object-position: center; /* Fokus pada tengah gambar */
+  border-radius: 12px; /* Membuat sudut gambar melengkung */
+}
+
+.card-title-ig {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 12px;
+  text-align: left;
+  text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+.card-year-ig {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
 
 /* row 7 */
 .row-seven {
@@ -416,6 +487,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1; /* Menjamin kartu berada di bawah navbar */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(90, 88, 88, 0.3); /* Warna dan ketebalan border */
 }
 
 .title-award {
@@ -788,6 +860,66 @@ body {
   }
   
   .card-year-poster {
+    font-size: 12px;
+    text-align: left;
+    margin-top: 4px;
+  }
+
+  .row-six-2 {
+    width: 100%;
+    max-width: 350px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .subheading-ig {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .card-container-ig {
+    display: flex;
+    gap: 8px; /* Jarak antar kartu */
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    overflow-y: hidden; /* Hapus scroll vertikal */
+    scroll-behavior: smooth; /* Animasi smooth saat scrolling */
+    padding: 12px;
+    width: 100%; /* Ambil lebar penuh */
+    box-sizing: border-box;
+  }
+  
+  .card-ig {
+    width: 160px; /* Ukuran lebar kartu */
+    flex-shrink: 0; /* Mencegah kartu mengecil */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-ig:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-image-ig {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Memastikan gambar selalu berbentuk persegi (rasio 1:1) */
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa mengubah rasio */
+    object-position: center; /* Fokus pada tengah gambar */
+    border-radius: 8px; /* Membuat sudut gambar melengkung */
+  }
+  
+  .card-title-ig {
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: left;
+  }
+  
+  .card-year-ig {
     font-size: 12px;
     text-align: left;
     margin-top: 4px;
